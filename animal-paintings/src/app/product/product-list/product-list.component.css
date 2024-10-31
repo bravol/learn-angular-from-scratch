@@ -1,3 +1,27 @@
+h2 {
+  text-align: center;
+  margin-bottom: 2rem;
+  font-size: 2rem;
+}
+
+/* Grid layout */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  gap: 1.5rem;
+}
+
+/* Product card styles */
 .product-card {
   max-width: 150px;
+}
+
+/* Hover and transition effects */
+mat-card:hover {
+  transform: scale(1.05);
+  cursor: pointer;
+}
+
+mat-card {
+  transition: transform 0.2s;
 }
