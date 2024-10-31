@@ -25,3 +25,7 @@ mat-card:hover {
 mat-card {
   transition: transform 0.2s;
 }
+
+.sort-dopdown {
+  margin-left: 20px;
+}
