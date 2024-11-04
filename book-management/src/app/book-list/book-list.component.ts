@@ -1,17 +1,18 @@
 import { Component } from '@angular/core';
 import { Store, select } from '@ngrx/store';
+import { Observable } from 'rxjs';
 import { Book } from '../models/book';
 import { AddBook, RemoveBook } from '../books/book.actions';
-import { Observable } from 'rxjs';
 import { AppState } from '../app.state';
 
 @Component({
   selector: 'app-book-list',
   templateUrl: './book-list.component.html',
-  styleUrl: './book-list.component.css',
+  styleUrls: ['./book-list.component.css'],
 })
 export class BookListComponent {
   books$: Observable<Book[]>;
+
   constructor(private store: Store<AppState>) {
     this.books$ = store.pipe(select('book'));
   }
@@ -24,5 +25,3 @@ export class BookListComponent {
     this.store.dispatch(RemoveBook({ bookId }));
   }
 }
-
-// ng g c book-list
